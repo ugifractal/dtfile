@@ -1,0 +1,31 @@
+<h1>Listing Files</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Path</th>
+    <th>View</th>
+    <th>Action</th>
+  </tr>
+
+<% @files.each do |file| %>
+  <tr>
+    <td><%= file.file_file_name %></td>
+    <td><%= file.file %></td>
+    <td>
+      <% if file.file_content_type =~ /image/ %>
+	<%= image_tag(file.file.to_s, :style => "height:50px;") %>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to 'Destroy', "/dtfile/admin/manage_files/#{file.id}", 
+		:confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New File', "/dtfile/admin/manage_files/new" %>
+<%= will_paginate(@files) %>
