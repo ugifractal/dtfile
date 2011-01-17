@@ -1,0 +1,32 @@
+## Dtfile Alpha version
+
+This is a Rails 3 Engine for uploading public files.
+
+I just too boring have to add paperclip plugin and write lines of code to support attachments for public files
+specially when writing blog posts. So this engine will help me to provide basic uploading functionality.
+
+
+## Requirement
+- Your project should already have authentication
+
+
+## Installation
+
+- clone this repo
+  git clone git://github.com/ugifractal/dtfile.git
+
+- go to your Gemfile of project, that you want add a upload functionality. and add this line
+  gem <YOUR PATH OF Dtfile>
+  sample:
+  gem "../dtfile"
+
+- run bundle install from your project root
+  bundle install
+
+- copy the migration file from dtfile/db/migrate/* to your db/migrate/ folder, then run the migration
+  rake db:migrate
+
+- start your app, then visit
+  http://localhost:3000/dtfile/admin/manage_files
+
+
