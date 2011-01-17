@@ -1,0 +1,6 @@
+log/*
+tmp/*
+.autotest
+*.sw?
+.DS\_Strore
+.DS_Store
